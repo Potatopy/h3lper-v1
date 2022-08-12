@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { getEnvironmentData } = require('worker_threads');
 
 module.exports = (client) => {
     client.handleEvents = async () => {
