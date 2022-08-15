@@ -1,6 +1,7 @@
 // Dependancies (idk how to spell)
 require("dotenv").config();
-const { token } = process.env;
+const { token, database } = process.env;
+const { connect } = require('mongoose');
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
 
@@ -25,3 +26,6 @@ client.handleEvents();
 client.handleCommands();
 client.handleComponents();
 client.login(token);
+(async () => {
+  await connect(database).catch(console.error)
+})();
