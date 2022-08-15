@@ -8,6 +8,7 @@ const client = new Client({ intents: 32767 }); //Intents
 // Collections
 client.commands = new Collection();
 client.buttons = new Collection();
+client.selectMenus = new Collection();
 client.commandArray = [];
 
 const functionFolders = fs.readdirSync(`./src/functions`); // Calls Functions Folders
