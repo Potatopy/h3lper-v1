@@ -4,12 +4,12 @@ const { token } = process.env;
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
 
-const client = new Client({ intents: 32767 });
+const client = new Client({ intents: 32767 }); //Intents
 client.commands = new Collection();
 client.buttons = new Collection();
 client.commandArray = [];
 
-const functionFolders = fs.readdirSync(`./src/functions`);
+const functionFolders = fs.readdirSync(`./src/functions`); // Calls Functions Folders
 for (const folder of functionFolders) {
   const functionFiles = fs
     .readdirSync(`./src/functions/${folder}`)
@@ -18,6 +18,7 @@ for (const folder of functionFolders) {
     require(`./functions/${folder}/${file}`)(client);
 }
 
+// Calls Events & Commands + Login
 client.handleEvents();
 client.handleCommands();
 client.login(token);
