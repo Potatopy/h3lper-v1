@@ -1,3 +1,3 @@
 # h3lper-v1
 
-Hey look it's another github project i'll most likely abandon!
+There will a tutorial on how to setup the bot soon!
