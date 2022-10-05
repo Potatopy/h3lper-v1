@@ -22,7 +22,7 @@ module.exports = {
                 .setDescription('The reason for muting the member.')
         ),
     async execute(intercation, client) {
-        const user = intercation.option.getUser("target");
+        const user = intercation.options.getUser("target");
         let reason = intercation.options.getString('reason');
         const time = intercation.options.getInteger('time');
         const member = await intercation.guild.members

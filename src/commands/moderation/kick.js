@@ -16,7 +16,7 @@ module.exports = {
         .setDescription('The reason for kicking the member.')
     ),
   async execute(intercation, client) {
-    const user = intercation.option.getUser("target");
+    const user = intercation.options.getUser("target");
     let reason = intercation.options.getString('reason');
     const member = await intercation.guild.members
       .fetch(user.id)
