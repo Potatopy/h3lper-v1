@@ -14,7 +14,6 @@ module.exports = {
         option
             .setName('time')
             .setDescription('The amount of minutes to mute the member for.')
-            .setRequired(true)
         )
         .addStringOption(option =>
             option
@@ -24,14 +23,15 @@ module.exports = {
     async execute(intercation, client) {
         const user = intercation.options.getUser("target");
         let reason = intercation.options.getString('reason');
-        const time = intercation.options.getInteger('time');
+        let time = intercation.options.getInteger('time');
         const member = await intercation.guild.members
             .fetch(user.id)
             .catch(console.error);
 
         if (!reason) reason = "No reason provided.";
+        if (!time) time = null;
 
-        await member.timeout(time * 60 * 1000, reason).catch(console.error);
+        await member.timeout(time == null ? null : time * 60 * 1000, reason).catch(console.error);
 
         await intercation.reply({
             content: `STFU ${user.tag}`
