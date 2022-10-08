@@ -26,7 +26,7 @@ module.exports = {
             .setDescription('The user who is recieving the cash.')
             .setRequired(true)
         )
-        .addStringOption((option) => 
+        .addNumberOption((option) => 
         option
             .setName('amount')
             .setDescription('Amount being added.')
@@ -43,7 +43,7 @@ module.exports = {
             .setDescription('The user who is being robbed.')
             .setRequired(true)
         )
-        .addStringOption((option) => 
+        .addNumberOption((option) => 
         option
             .setName('amount')
             .setDescription('Amount being removed.')
@@ -53,18 +53,49 @@ module.exports = {
     .addSubcommand((subcommand) => 
     subcommand
         .setName('set-money')
-        .setDescription('Adds money into a users balance.')
+        .setDescription('Sets a certain balance to a user.')
         .addUserOption((option) => 
         option
             .setName('target')
-            .setDescription('The user who is recieving the cash.')
+            .setDescription('The user to set the balance to.')
             .setRequired(true)
         )
-        .addStringOption((option) => 
+        .addNumberOption((option) => 
         option
             .setName('amount')
-            .setDescription('Amount being added.')
+            .setDescription('Balance being set.')
             .setRequired(true)
         )
-    )
+    ),
+    /**
+     * 
+     * @param {ChatInputCommandInteraction} interaction 
+     * @param {Client} client 
+     */
+    async execute(interaction, client) {
+        const { guild, member } = interaction;
+        const embed = new EmbedBuilder
+        const sub = interaction.options.getSubcommand()
+
+        switch(sub) {
+            case('add-money') : {
+                let Target = interaction.options.getUser('target') || member;
+                let amount = interaction.options.getNumber('amount') || 1;
+                eco.balance.add(amount, Target.id, guild.id)
+
+                embed
+                    .setTitle('Completed!')
+                    .setDescription(`Added ${amount} coins to the user mentioned!`)
+            }
+            break;
+            case('remove-money') : {
+
+            }
+            break;
+            case('set-money') : {
+
+            }
+            break;
+        }
+    }
 }
