@@ -85,15 +85,39 @@ module.exports = {
 
                 embed
                     .setTitle('Completed!')
-                    .setDescription(`Added ${amount} coins to the user mentioned!`)
+                    .setDescription(`Added ${amount} coins to ${Target}!`)
+                    .setColor('Random')
+                    .setTimestamp()
+
+                interaction.reply({embeds: [embed]})
             }
             break;
             case('remove-money') : {
+                let Target = interaction.options.getUser('target') || member;
+                let amount = interaction.options.getNumber('amount') || 1;
+                eco.balance.subtract(amount, Target.id, guild.id)
 
+                embed
+                    .setTitle('Completed!')
+                    .setDescription(`Removed ${amount} coins from ${Target}!`)
+                    .setColor('Random')
+                    .setTimestamp()
+
+                interaction.reply({embeds: [embed]})
             }
             break;
             case('set-money') : {
+                let Target = interaction.options.getUser('target') || member;
+                let amount = interaction.options.getNumber('amount') || 1;
+                eco.balance.set(amount, Target.id, guild.id)
 
+                embed
+                    .setTitle('Completed!')
+                    .setDescription(`Succesfully set ${amount} coins to ${Target}!`)
+                    .setColor('Random')
+                    .setTimestamp()
+
+                interaction.reply({embeds: [embed]})
             }
             break;
         }
