@@ -1,4 +1,4 @@
 .env
 node_modules
 storage.json
-/src/**/test
+src/commands/test
