@@ -1,3 +1,5 @@
+// Credits: faint#1337
+
 const { ActivityType } = require('discord.js')
 
 module.exports = (client) => {
@@ -5,7 +7,7 @@ module.exports = (client) => {
         const options = [
             {
                 type: ActivityType.Watching,
-                text: "instagram.com/h3lped.v2",
+                text: "instagram.com/h3lped.v2", // You can change this to whatever you want
                 status: "idle"
             },
             {

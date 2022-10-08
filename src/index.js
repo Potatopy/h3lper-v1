@@ -1,3 +1,5 @@
+// Credits: faint#1337
+
 // Dependancies (idk how to spell)
 require("dotenv").config();
 const { token, database } = process.env;

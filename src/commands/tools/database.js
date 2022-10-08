@@ -1,3 +1,5 @@
+// Credits: faint#1337
+
 const Guild = require("../../schemas/guild");
 const { SlashCommandBuilder } = require("discord.js");
 const mmongoose = require("mongoose");

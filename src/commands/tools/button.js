@@ -1,3 +1,5 @@
+// Credits: faint#1337
+
 const {
   SlashCommandBuilder,
   ActionRowBuilder,

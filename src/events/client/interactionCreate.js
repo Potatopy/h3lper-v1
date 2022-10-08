@@ -1,3 +1,5 @@
+// Credits: faint#1337
+
 module.exports = {
   name: "interactionCreate",
   async execute(interaction, client) {

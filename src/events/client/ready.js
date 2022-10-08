@@ -1,3 +1,5 @@
+// Credits: faint#1337
+
 const { ActivityType } = require('discord.js')
 
 module.exports = {

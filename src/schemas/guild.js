@@ -1,3 +1,5 @@
+// Credits: faint#1337
+
 const { Schema, model } = require("mongoose");
 const guildSchema = new Schema({
   _id: Schema.Types.ObjectId,
