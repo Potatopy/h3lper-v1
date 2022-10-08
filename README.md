@@ -1,3 +1,6 @@
 # h3lper-v1
 
-There will a tutorial on how to setup the bot soon!
+Requirements: 
+- node v18 or higher
+- Discord bot token (duh)
+- MongoDB Database login
