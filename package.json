@@ -13,6 +13,7 @@
     "@discordjs/rest": "^1.0.0",
     "chalk": "^4.1.2",
     "discord-api-types": "^0.36.3",
+    "discord-economy-super": "^1.6.7",
     "discord.js": "^14.0.3",
     "dotenv": "^16.0.1",
     "jshint": "^2.13.5",
