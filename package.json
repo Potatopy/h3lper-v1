@@ -7,7 +7,7 @@
     "test": "node ."
   },
   "keywords": [],
-  "author": "h3lped#0009",
+  "author": "faint#1337",
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.8.0",
