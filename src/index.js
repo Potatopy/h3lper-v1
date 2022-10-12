@@ -6,6 +6,7 @@ const { token, database } = process.env;
 const { connect } = require('mongoose');
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
+const { DisTube } = require("distube")
 
 const client = new Client({ intents: 32767 }); //Intents
 // Collections
