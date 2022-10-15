@@ -1,6 +1,6 @@
 // Credits: faint#1337
 
-// Dependancies (idk how to spell)
+// Dependancies
 require("dotenv").config();
 const { token, database } = process.env;
 const { connect } = require('mongoose');
