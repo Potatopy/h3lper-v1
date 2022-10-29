@@ -1,4 +1,4 @@
-// Credits: faint#1337
+// Credits: zach.#0001
 
 const Economy = require('discord-economy-super')
 const eco = new Economy({

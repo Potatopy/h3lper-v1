@@ -1,4 +1,4 @@
-// Credits: faint#1337
+// Credits: zach.#0001
 
 const { SlashCommandBuilder, InteractionCollector } = require("discord.js");
 
